@@ -1,0 +1,76 @@
+// Common styles of the project
+
+html, body {
+  height: 100%;
+  min-width: 360px;
+}
+
+.page {
+  font-family: $font;
+  line-height: 1.2;
+  color: $black;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #c4cdd6;
+
+  opacity: 1;
+  visibility: visible;
+
+  transition: .2s all;
+
+  &.overlay-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__btn {
+    display: block;
+    padding: 17px 23px 13px;
+
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+}
+
+.link {
+  display: block;
+  padding: 11px 23px;
+  border: 1px solid $black;
+  border-radius: 3px;
+  
+  color: $black;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  background-color: transparent;
+
+  transition: .2s all;
+
+  cursor: pointer;
+
+  @media (min-width: $ld) {
+    font-size: 16px;
+    padding: 13px 30px 13px;
+  }
+
+  &:hover {
+    border: 1px solid $orange;
+
+    color: $white;
+
+    background-color: $orange;
+  }
+}

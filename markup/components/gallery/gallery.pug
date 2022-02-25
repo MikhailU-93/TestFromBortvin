@@ -1,0 +1,35 @@
+mixin gallery(data)
+  section.gallery
+    .gallery__slider.swiper
+      i.gallery__btn.-prev
+      i.gallery__btn.-next
+      .gallery__items.swiper-wrapper
+        for slide, index in data.slides
+          .gallery__item.swiper-slide
+            picture.gallery__photoContainer
+              source.gallery__photo(srcset=`__static__img/assets/gallery/slider_${index + 1}min.jpg` media="(max-width: 977px)")
+              source.gallery__photo(srcset=`__static__img/assets/gallery/slider_tablet${index + 1}.jpg` media="(max-width: 1169px)")
+              source.gallery__photo(srcset=`__static__img/assets/gallery/slider_${index + 1}.jpg` media="(min-width: 1170px)")
+              
+
+              img.gallery__photo(src=`__static__img/assets/gallery/slider_${index + 1}.jpg` alt="photo")
+
+            .gallery__wrap
+              .gallery__titleGroup 
+                h2.gallery__title= slide.title
+                p.gallery__subtitle= slide.subtitle
+
+                .gallery__links
+                  a.gallery__link.link(href="#") Подробнее
+                  a.gallery__link.link(href="#") Все акции
+
+      .gallery__previewItems
+        for preview, index in data.previews
+          .gallery__previewItem
+            img.gallery__preview(src=`__static__img/assets/gallery/slider_${index + 1}pre.jpg` alt="preview")
+            .gallery__group
+              p.gallery__notice= preview.previewSubtitle
+              h3.gallery__caption= preview.previewTitle
+      .swiper-pagination
+
+      
